@@ -1,1 +1,9 @@
-<h1>Welcome to Food from around the World!</h1>
+<% @foods.each do |food| %>
+  <div>
+    <h1><%= food.name %></h1><br />
+    <i><%= food.description %></i><br />
+    <p><%= food.country %></p><br />
+  </div>
+
+  <hr />
+<% end %>
