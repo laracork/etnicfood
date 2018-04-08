@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20180408181126) do
   create_table "foods", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "country"
+    t.text     "country"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

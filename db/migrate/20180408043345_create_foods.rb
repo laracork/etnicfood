@@ -3,7 +3,7 @@ class CreateFoods < ActiveRecord::Migration[5.0]
     create_table :foods do |t|
       t.string :name
       t.text :description
-      t.string :country
+      t.text :country
       t.timestamps
     end
   end

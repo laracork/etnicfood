@@ -8,10 +8,10 @@
   background: image_url('low_contrast_linen');
 }
 
-.navbar-inverse a.navbar-brand {
-  font-family: "Helvetica Neue", Helvetica;
-  font-weight: 100;
-  color: white;
+.navbar-inverse .navbar-brand {
+  color: #FF9124;
+  font-family: 'rubikregular'; 
+  font-size: 30px;
 }
 
 .hero {
