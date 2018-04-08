@@ -1,0 +1,13 @@
+ <div class="booyah-box col-10 offset-1"> 
+  <h1>Create a new favorite ethnic dish</h1>
+
+  <%= simple_form_for @foods do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :country %>
+    
+    <br />
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+  <% end %>
+
+</div>
