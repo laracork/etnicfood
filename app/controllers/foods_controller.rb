@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
 
   def index
-    @foods = Food.all
+    @foods = Food.order("name")
   end
 
   def new
@@ -11,6 +11,11 @@ class FoodsController < ApplicationController
   def create
     Food.create(food_params)
     redirect_to root_path
+  end
+
+  def show
+    @food = Food.find(params[:id])
+    @photo = Photo.new
   end
 
   private
