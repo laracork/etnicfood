@@ -5,3 +5,9 @@
   <p><%= @food.country %></p>
   <%= image_tag 'tteokbokki.jpg' %>
 </div>
+
+<%= simple_form_for @photo, url: food_photos_path(@food) do |f| %>
+  <div class="modal-body">
+    <%= f.input :picture %>
+    <%= f.input :caption %>
+  </div>
