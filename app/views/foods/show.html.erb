@@ -3,11 +3,58 @@
   <i><%= @food.description %></i>
   <br/><br/>
   <p><%= @food.country %></p>
-  <%= image_tag 'tteokbokki.jpg' %>
+
+
+  <!-- Modal for Photos-->
+<div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myPhotoModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Add photo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <%= simple_form_for @photo, url: food_photos_path(@food) do |f| %>
+      <div class="modal-body">
+        <%= f.input :picture %>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <%= f.submit "Save Changes", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+    </div>
+  </div>
 </div>
 
-<%= simple_form_for @photo, url: food_photos_path(@food) do |f| %>
-  <div class="modal-body">
-    <%= f.input :picture %>
-    <%= f.input :caption %>
-  </div>
+<div class="col-10">
+<h1 class="float-left">Photos</h1>
+<br /><br /><br />
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-md float-left" data-toggle="modal" data-target="#myPhotoModal">
+  Add photo
+</button>
+
+<div class="clear"></div>
+
+<div class="row">
+  <% @food.photos.each do |photo| %>
+    <div class="col-12 col-sm-6">
+      <blockquote>
+        <%= image_tag photo.picture %>
+        <br />
+        <%= photo.caption %>
+      </blockquote>
+    </div>
+  <% end %>
+</div>
+</div>
+
+
+</div>
+
+
+<br /><br />
