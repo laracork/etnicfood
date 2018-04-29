@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :foods do
       resources :photos, only: :create
   end
-  resources :users, only: :show
+ 
 end
